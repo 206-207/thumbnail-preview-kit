@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thumbnail Tester — Preview Your YouTube Thumbnail and Title</title>
+<meta name="description" content="Free thumbnail tester. Upload a YouTube thumbnail and title, then preview them in home feed, search results, watch page, Shorts, mobile and sidebar layouts. No signup. Nothing is uploaded.">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://mythumbtester.com/">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Thumbnail Tester</h1>
+  <button id="themeBtn" type="button">Dark mode</button>
+</header>
+
+<main>
+  <section class="tool">
+    <div class="panel inputs">
+      <div id="drop" class="drop" tabindex="0" role="button" aria-label="Upload a thumbnail">
+        <input type="file" id="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+        <strong>Drop your thumbnail here</strong>
+        <span class="sub">or click to browse, or paste from clipboard (Ctrl/Cmd+V)</span>
+        <span class="sub">JPG, PNG, WebP or GIF &middot; up to 10 MB &middot; 1280&times;720 recommended</span>
+      </div>
+
+      <label class="field">
+        <span>Video title</span>
+        <input id="title" type="text" maxlength="100" placeholder="Your video title">
+      </label>
+
+      <div class="grid2">
+        <label class="field"><span>Channel name</span><input id="channel" type="text" maxlength="40" placeholder="Your Channel"></label>
+        <label class="field"><span>Views</span><input id="views" type="text" maxlength="24" placeholder="128K views"></label>
+        <label class="field"><span>Duration</span><input id="duration" type="text" maxlength="10" placeholder="12:34"></label>
+        <label class="field"><span>Publish age</span><input id="age" type="text" maxlength="24" placeholder="2 days ago"></label>
+      </div>
+
+      <p id="msg" class="msg" role="status"></p>
+    </div>
+
+    <div class="panel preview">
+      <div class="tabs" id="tabs">
+        <button type="button" data-p="feed" class="on">Home feed</button>
+        <button type="button" data-p="search">Search</button>
+        <button type="button" data-p="watch">Watch page</button>
+        <button type="button" data-p="shorts">Shorts</button>
+        <button type="button" data-p="mobile">Mobile</button>
+        <button type="button" data-p="sidebar">Sidebar</button>
+      </div>
+      <div class="canvas-wrap"><canvas id="cv"></canvas></div>
+      <div class="row">
+        <button id="dl" type="button">Download PNG</button>
+        <span id="dim" class="dim"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="copy">
+<p class="preview-note">These are illustrative layout previews, not a live YouTube interface or a prediction of clicks. Actual layouts can vary by device and change over time. GIF files are rendered as a still preview; downloads are PNG images.</p>
+    <h2>Supported formats and limits</h2>
+    <ul>
+      <li><strong>Input formats:</strong> JPG, PNG, WebP, GIF. Anything else is rejected with an error message.</li>
+      <li><strong>Maximum file size:</strong> 10 MB. Larger files are rejected before they are read.</li>
+      <li><strong>Recommended size:</strong> 1280&times;720 (16:9). Other sizes are accepted and center-cropped to the selected preview region.</li>
+      <li><strong>Placements covered:</strong> home feed, search results, watch page, Shorts, mobile feed, sidebar &mdash; six layouts, each downloadable as PNG.</li>
+      <li><strong>No account, no upload.</strong> Everything runs in this browser tab. Your image never leaves this machine.</li>
+    </ul>
+
+    <h2>How to use this thumbnail tester</h2>
+    <ol>
+      <li>Drop in your thumbnail, or paste it from the clipboard.</li>
+      <li>Type the title you plan to publish with, plus channel name, views, duration and publish age if you want the card filled in.</li>
+      <li>Switch between the six placements to see how it holds up where viewers will actually see it.</li>
+      <li>Hit Download PNG to save the placement you are looking at.</li>
+    </ol>
+
+    <h2>FAQ</h2>
+    <h3>What is a thumbnail tester?</h3>
+    <p>A youtube thumbnail tester renders your image and title inside illustrative YouTube-style layouts, so you can check cropping, text size and contrast before you publish instead of after.</p>
+    <h3>Is this yt thumbnail tester free?</h3>
+    <p>Yes. No signup, no upload, no watermark. It runs entirely in your browser.</p>
+    <h3>Can I test the thumbnail and title together?</h3>
+    <p>Yes. This youtube thumbnail and title tester draws the title next to the image in every placement, because a thumbnail rarely fails on its own &mdash; it usually fails by repeating what the title already says.</p>
+    <h3>Does it score my thumbnail?</h3>
+    <p>No. It shows you what viewers will see. Judging it is your call.</p>
+  </section>
+</main>
+
+<footer class="site-footer">Independent illustrative preview. Not affiliated with YouTube or Google.</footer>
+<script src="app.js"></script>
+</body>
+</html>
